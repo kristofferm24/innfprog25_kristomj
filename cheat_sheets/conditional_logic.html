@@ -16,8 +16,33 @@
         //If-test
         if(age >= 18 && tg_passed === true)
         document.getElementByid("carmsg").innerHTML = "ja"
-    
+    else 
+    document.getElementById("carmsg").innerHTML = "nei"
+
+    //Sjekk om dør er låst, eventuelt om spiller har nøkkel i sekken
+    const door_locked = true
+    const backpack =""
+
+    let utskrift = document.getElementById("doormsg")
+    if(door_locked === false){
+        utskrift.innerHTML = "ja"
+    } else if(backpack.includes("key")
+    utskrift.innerHTML = "nei"
+    } else {
+        utskrift.innerHTML = "nei"
+    }
+
+
+    let retiremsg = document.getElementById("retire")
+
+    //Sjekk av mulig pensjonsalder
+    if(age >= 62 && age < 67)
+    retiremsg.innerHTML = "Du kan gå av med AFP."
+else if(age >= 67)
+retiremsg.innerHTML = "Dub kan gå av med full pensjon."
+else
+retiremsg.innerHTML = ´Du kan gå av med AFP om $ år, og full pensjon om ${67 - age} år.´
 
     </script>
 </body>
-</html>
+</html
