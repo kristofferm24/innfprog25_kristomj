@@ -8,41 +8,42 @@
 <body>
     <h2>Er du kvalifisert til å ta førerkort?</h2>
     <p id="carmsg"> </p>
+    <p id="doormsg"></p>
+    <p id="retire"></p>
 
     <script>
-        const age = 18
-        const tg_passed = true
-        
-        //If-test
-        if(age >= 18 && tg_passed === true)
-        document.getElementByid("carmsg").innerHTML = "ja"
-    else 
-    document.getElementById("carmsg").innerHTML = "nei"
+        const age = 18;
+        const tg_passed = true; // Added missing variable
 
-    //Sjekk om dør er låst, eventuelt om spiller har nøkkel i sekken
-    const door_locked = true
-    const backpack =""
+        // If-test
+        if(age >= 18 && tg_passed === true) {
+            document.getElementById("carmsg").innerHTML = "ja";
+        } else {
+            document.getElementById("carmsg").innerHTML = "nei";
+        }
 
-    let utskrift = document.getElementById("doormsg")
-    if(door_locked === false){
-        utskrift.innerHTML = "ja"
-    } else if(backpack.includes("key")
-    utskrift.innerHTML = "nei"
-    } else {
-        utskrift.innerHTML = "nei"
-    }
+        const door_locked = true;
+        const backpack = "";
 
+        let utskrift = document.getElementById("doormsg");
+        if(door_locked === false){
+            utskrift.innerHTML = "ja";
+        } else if(backpack.includes("key")) {
+            utskrift.innerHTML = "ja";
+        } else {
+            utskrift.innerHTML = "nei";
+        }
 
-    let retiremsg = document.getElementById("retire")
+        let retiremsg = document.getElementById("retire");
 
-    //Sjekk av mulig pensjonsalder
-    if(age >= 62 && age < 67)
-    retiremsg.innerHTML = "Du kan gå av med AFP."
-else if(age >= 67)
-retiremsg.innerHTML = "Dub kan gå av med full pensjon."
-else
-retiremsg.innerHTML = ´Du kan gå av med AFP om $ år, og full pensjon om ${67 - age} år.´
-
+        // Sjekk av mulig pensjonsalder
+        if(age >= 62 && age < 67) {
+            retiremsg.innerHTML = "Du kan gå av med AFP.";
+        } else if(age >= 67) {
+            retiremsg.innerHTML = "Du kan gå av med full pensjon.";
+        } else {
+            retiremsg.innerHTML = `Du kan gå av med AFP om ${62 - age} år, og full pensjon om ${67 - age} år.`;
+        }
     </script>
 </body>
-</html
+</html>
