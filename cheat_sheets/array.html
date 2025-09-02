@@ -40,15 +40,21 @@
         const profiles = document.getElementById("profiles");
 
         lecturers.map(lecturer => {
-            profiles.innerHTML += 
-            `<li>
-                <h3>${lecturer.name}<h3>
-                    <span> ${2025 - lecturer.birthyear} </span>
+            profile.InerHTML += `
+            <li>
+                <h3>${lecturer.name}</h3>
+                <span>ALder: ${2025 - lecturer.birthyear}</span>
                 <p>Kontor: ${lecturer.office}</p>
-                <a href="mailto:${lecturer.Email}">Skriv e-post til${lecturer.Email}</a>
-                    </li>`;
+                <a href="mailto": ${lecturer.Email}</p>
+                <p>: ${lecturer.birthyear}</p>
+
+            
             console.log(lecturer);
         });
+
+        lecturers.filter(lec => lecturer.birthyear >= 19990).map(Lecturer => {
+
+        }))
 
 
     </script>
