@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="setning"></p>
+    
+    <script>
+        const dyr = ["hund, katt, hest, ku, gris, sau, geit, høne, ape, løve"]
+
+        const animals = ["Dog, Cat, Horse, Cow, Pig, Sheep, Goat, Chicken, Monkey, Lion"]
+
+        constdyrIndex1 = 2
+        constdyrIndex2 = 7
+
+        const tekst = `${dyr[dyrIndex1]} er et dyr. Det heter ${animals[dyrIndex1]} på engelsk, ${dyr[dyrindex5]} er også et dyr, som heter ${animals[dyrIndex5]} på engelsk.`
+        
+        console.log(tekst)
+
+        document.getElementById("setning").innerHTML = tekst
+
+    </script>
+</body>
+</html>
