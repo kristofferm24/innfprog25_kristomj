@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="setning"></p>
+    <script>
+const dyr = ["hund, katt, hest, ku, gris, sau, geit, høne, ape, løve"]
+
+const animals = ["Dog, Cat, Horse, Cow, Pig, Sheep, Goat, Chicken, Monkey, Lion"]
+
+//Template literals med dyrene og oversettelser på index 2 og 8
+
+const tekst = `${dyr[2]} er et dyr. Det heter ${animals[2]} på engelsk.
+${dyr[8]} er også et dyr, som heter ${animals[8]} på engelsk.`
+
+//Skriv ut setningen til p#utskrift:
+document.getElementById("setning").innerHTML = tekst
+
+    </script>
+</body>
+</html>

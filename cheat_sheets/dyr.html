@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Her er det listet opp noen dyr, for eksempel hund og katt</p>
+    <p id = "dyr"></p>
+
+    <script>
+const dyr = ["hund, katt, hest, ku, gris, sau, geit, høne, ape, løve"];
+let dyrArray = dyr.sort();
+
+dyrArray = dyr.reverse();
+
+console.log(dyrArray)
+
+const dyrElement = document.getElementById("dyr")
+dyrElement.innerHTML = dyrArray
+
+    </script>
+</body>
+</html>
