@@ -85,14 +85,62 @@
 
        
         //TODO: notebook
+
+        const notebook = {
+            variables: 2,
+            arrays: 4,
+            loops: 3,
+            functions: 7
+        }
         
 
 
         //TODO: print playerinfo to HTML
+
+        document.getElementById("playerName").innerHTML = gameConfig.player
+        document.getElementById("energy").innerHTML = gameconfig.energy
+        document.getElementById("points").innerHTML = gameconfig.points
+        document.getElementById("duration").innerHTML = gameconfig.duration
         
         //TODO: print notebook info to HTML
 
+        document.getElementById("variables").innerHTML = notebook.variables
+        document.getElementById("arrays").innerHTML = notebook.arrays
+        document.getElementById("loops").innerHTML = notebook.loops
+        document.getElementById("functions").innerHTML = notebook.functions
+        
+
         //(BONUS) TODO: function for all prints
+
+        function updateStaticUI(){
+            let playerNameHTML = document.getElementById("playerName")
+
+            if(gameconfig.player === ""){
+                document.getElementById("playerName").innerHTML = "waiting for player..."
+                for(key in gameConfig){
+                    key === playerName ? playerName : gameConfig[key] = 0
+                }
+                for(key in notebook){
+                    notebook[key] = 0
+                }
+                
+            } else {
+                document.getElementById("playerName").innerHTML = gameConfig.player
+            }
+
+        document.getElementById("playerName").innerHTML = gameConfig.player
+        document.getElementById("energy").innerHTML = gameconfig.energy
+        document.getElementById("points").innerHTML = gameconfig.points
+        document.getElementById("duration").innerHTML = gameconfig.duration
+
+        document.getElementById("variables").innerHTML = notebook.variables
+        document.getElementById("arrays").innerHTML = notebook.arrays
+        document.getElementById("loops").innerHTML = notebook.loops
+        document.getElementById("functions").innerHTML = notebook.functions
+        
+        }
+
+
         
     </script>
 </body>
