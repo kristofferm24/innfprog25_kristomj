@@ -25,17 +25,49 @@
         let random_color_code = "#"
         
         //Din kode for å løse problem 1 her.
+        function genererFarge(){
+            const tegn = '0123456789ABCDEF';
+            let farge = '#';
+            for (let i = 0; i < 6; i++) {
+                farge += tegn[Math.floor(Math.random() * 16)];
+        }
+
+        document.getElementById("random_color").innerText = farge;
+        }
+        genererFarge()
+    
 
         //PROBLEM 2
         const programming_words = ["variabel","funksjon","array","objekt","loop","betingelse","klasse","rekursjon","algoritme","kompilator"]
 
         //Din kode for å løse problem 2 her.
+        function sjekkOrd(ord){
+            if (programming_words.includes(ord)){
+                return "Ja"
+            } else {
+                return "Nei"
+            }
+        }
+        document.getElementById("betingelse_sjekk").innerText = sjekkOrd("betingelse")
+        document.getElementById("algoritme_sjekk").innerText = sjekkOrd("algoritme")
+        document.getElementById("problemlosning_sjekk").innerText = sjekkOrd("problemløsning")
+
+
+
 
         //PROBLEM 3
         const tall_array_en = [9, 13, 5, 62, 11, 6, 28, 31, 17]
         const tall_array_to = [23, 76, 88, 13, 56, 90, 42]
 
         //Din kode for å løse problem 3 her.
+        function finnGjennomsnitt(array){
+            const sum = array.reduce((acc, curr) => acc + curr, 0);
+            const gjennomsnitt = sum / array.length;
+            return gjennomsnitt;
+        }
+        document.getElementById("avg_array_one").innerText = finnGjennomsnitt(tall_array_en)
+        document.getElementById("avg_array_two").innerText = finnGjennomsnitt(tall_array_to)
+
     </script>
 </body>
 </html>

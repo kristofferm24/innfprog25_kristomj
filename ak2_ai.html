@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Arbeidskrav 2</h1>
+    <p>Denne nettsiden skal ha noen ulike funksjoner, som beskrevet i <a href="https://hiof.instructure.com/courses/9942/assignments/46701" target="_blank">oppgaveteksten i canvas.</a></p>
+    <h2>Problem 1</h2>
+    <p>Tilfeldig hexadesimal fargekode: <span id="random_color"></span></p>
+    <h2>Problem 2</h2>
+    <p>Finnes ordet "betingelse" i Programmeringsord-arrayen? <span id="betingelse_sjekk"></span></p>
+    <p>Finnes ordet "algoritme" i Programmeringsord-arrayen? <span id="algoritme_sjekk"></span></p>
+    <p>Finnes ordet "problemløsning" i Programmeringsord-arrayen? <span id="problemlosning_sjekk"></span></p>
+    <h2>Problem 3</h2>
+    <p>Gjennomsnittet av tallene i tall_array_en er <span id="avg_array_one"></span></p>
+    <p>Gjennomsnittet av tallene i tall_array_to er <span id="avg_array_one"></span></p>
+
+    <div id="colorBox">#FFFFFF</div>
+  <button onclick="generateHexColor()">Generer farge</button>
+
+    <div class="resultat">betingelse: <span id="res1"></span></div>
+  <div class="resultat">algoritme: <span id="res2"></span></div>
+  <div class="resultat">problemløsning: <span id="res3"></span></div>
+
+  <div class="resultat">Gjennomsnitt av tall_array_en: <span id="gjennomsnitt1"></span></div>
+  <div class="resultat">Gjennomsnitt av tall_array_to: <span id="gjennomsnitt2"></span></div>
+
+    <script>
+        //PROBLEM 1
+        
+        //AI-kode for å løse problem 1 her.
+        function generateHexColor() {
+      const hexChars = '0123456789ABCDEF';
+      let color = '#';
+      for (let i = 0; i < 6; i++) {
+        const randomIndex = Math.floor(Math.random() * hexChars.length);
+        color += hexChars[randomIndex];
+      }
+      document.getElementById('colorBox').textContent = color;
+      document.getElementById('colorBox').style.backgroundColor = color;
+    }
+
+        //PROBLEM 2
+        const programming_words = ["variabel","funksjon","array","objekt","loop","betingelse","klasse","rekursjon","algoritme","kompilator"]
+
+        //AI-kode for å løse problem 2 her.
+        function finnesOrd(ord) {
+      return programming_words.includes(ord) ? "Ja" : "Nei";
+    }
+
+    document.getElementById("res1").textContent = finnesOrd("betingelse");
+    document.getElementById("res2").textContent = finnesOrd("algoritme");
+    document.getElementById("res3").textContent = finnesOrd("problemløsning");
+
+        //PROBLEM 3
+        const tall_array_en = [9, 13, 5, 62, 11, 6, 28, 31, 17]
+        const tall_array_to = [23, 76, 88, 13, 56, 90, 42]
+
+        //AI-kode for å løse problem 3 her.
+    function beregnGjennomsnitt(array) {
+      const sum = array.reduce((acc, val) => acc + val, 0);
+      return sum / array.length;
+    }
+
+    document.getElementById("gjennomsnitt1").textContent = beregnGjennomsnitt(tall_array_en).toFixed(2);
+    document.getElementById("gjennomsnitt2").textContent = beregnGjennomsnitt(tall_array_to).toFixed(2);
+
+
+    </script>
+</body>
+</html>
