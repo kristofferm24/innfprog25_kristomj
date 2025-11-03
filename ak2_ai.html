@@ -18,55 +18,66 @@
     <p>Gjennomsnittet av tallene i tall_array_en er <span id="avg_array_one"></span></p>
     <p>Gjennomsnittet av tallene i tall_array_to er <span id="avg_array_one"></span></p>
 
-    <div id="colorBox">#FFFFFF</div>
-  <button onclick="generateHexColor()">Generer farge</button>
 
-    <div class="resultat">betingelse: <span id="res1"></span></div>
+   <h1>Generer en tilfeldig hex-fargekode</h1>
+  <div id="colorBox"></div>
+  <p id="colorCode">#FFFFFF</p>
+  <button onclick="generateHexColor()">Generer ny farge</button>
+
+   <h1>Sjekk om ord finnes i arrayen</h1>
+
+  <div class="resultat">betingelse: <span id="res1"></span></div>
   <div class="resultat">algoritme: <span id="res2"></span></div>
   <div class="resultat">problemløsning: <span id="res3"></span></div>
 
-  <div class="resultat">Gjennomsnitt av tall_array_en: <span id="gjennomsnitt1"></span></div>
-  <div class="resultat">Gjennomsnitt av tall_array_to: <span id="gjennomsnitt2"></span></div>
+  <div class="resultat">Gjennomsnitt av tall_array_en: <span id="res1"></span></div>
+  <div class="resultat">Gjennomsnitt av tall_array_to: <span id="res2"></span></div>
 
     <script>
         //PROBLEM 1
         
         //AI-kode for å løse problem 1 her.
-        function generateHexColor() {
+         function generateHexColor() {
       const hexChars = '0123456789ABCDEF';
       let color = '#';
       for (let i = 0; i < 6; i++) {
         const randomIndex = Math.floor(Math.random() * hexChars.length);
         color += hexChars[randomIndex];
       }
-      document.getElementById('colorBox').textContent = color;
+      document.getElementById('colorCode').textContent = color;
       document.getElementById('colorBox').style.backgroundColor = color;
     }
+       
 
         //PROBLEM 2
         const programming_words = ["variabel","funksjon","array","objekt","loop","betingelse","klasse","rekursjon","algoritme","kompilator"]
 
         //AI-kode for å løse problem 2 her.
-        function finnesOrd(ord) {
-      return programming_words.includes(ord) ? "Ja" : "Nei";
+            function sjekkOrd(ord) {
+      return ordListe.includes(ord) ? "Ja" : "Nei";
     }
 
-    document.getElementById("res1").textContent = finnesOrd("betingelse");
-    document.getElementById("res2").textContent = finnesOrd("algoritme");
-    document.getElementById("res3").textContent = finnesOrd("problemløsning");
+    document.getElementById("res1").textContent = sjekkOrd("betingelse");
+    document.getElementById("res2").textContent = sjekkOrd("algoritme");
+    document.getElementById("res3").textContent = sjekkOrd("problemløsning");
+        
 
         //PROBLEM 3
         const tall_array_en = [9, 13, 5, 62, 11, 6, 28, 31, 17]
         const tall_array_to = [23, 76, 88, 13, 56, 90, 42]
 
         //AI-kode for å løse problem 3 her.
-    function beregnGjennomsnitt(array) {
-      const sum = array.reduce((acc, val) => acc + val, 0);
+
+         function beregnGjennomsnitt(array) {
+      if (array.length === 0) return 0;
+      let sum = 0;
+      for (let i = 0; i < array.length; i++) {
+        sum += array[i];
+      }
       return sum / array.length;
     }
-
-    document.getElementById("gjennomsnitt1").textContent = beregnGjennomsnitt(tall_array_en).toFixed(2);
-    document.getElementById("gjennomsnitt2").textContent = beregnGjennomsnitt(tall_array_to).toFixed(2);
+   document.getElementById("res1").textContent = beregnGjennomsnitt(tall_array_en).toFixed(2);
+    document.getElementById("res2").textContent = beregnGjennomsnitt(tall_array_to).toFixed(2);
 
 
     </script>
